@@ -1,1 +1,1 @@
-# Puc-Campinas
+# Puc Campinas
