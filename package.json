@@ -1,11 +1,11 @@
 {
-  "name": "projeto-teste",
+  "name": "super-backend",
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
     "build": "tsc",
-    "start": "",
-    "dev": "node ./src/index.ts"
+    "start": "node ./src/server.js",
+    "dev": "node ./src/server/server.ts"
   },
   "keywords": [],
   "author": "",
