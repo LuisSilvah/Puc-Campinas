@@ -26,3 +26,23 @@ node server.js
 ```
 
 Voilà!
+
+## Desafio
+
+Numa requisição http existem verbos estes verbos são muitos porém os mais comuns
+são (GET, PUT, POST, DELETE).
+
+Na requisição http informamos tanto o verbo quanto os parâmetros que o serviço deve receber, os parâmetros
+se dividem em dois tipos:
+
+Parâmetros de cabeçalho (Headers)
+Parâmetros no corpo da requisição (body)
+
+Quando vamos usar um serviço que não precisa receber um parâmetro de dado sensivel como senha podemos enviar o parâmetro no corpo da requisição,
+Porém quando precisamos enviar um dado sensivel fazemos isso como header
+
+## Tarefa
+
+Chamar os dois serviços passando um raio dinâmico tanto no Header tanto no Body
+
+Aprender a invocar o serviço CURL
