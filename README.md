@@ -25,7 +25,22 @@ Acesse o diretório onde está o arquivo server.js (build/src) e digite o comand
 node server.js
 ```
 
-Voilà!
+## Nodemon
+
+
+```
+npm install -D nodemon ts-node
+```
+
+No Package.json
+```
+ "scripts": {
+    "build": "tsc",
+    "dev": "nodemon ./src/server.ts",
+    "start": "node ./build/src/server.js"
+  },
+```
+
 
 ## Desafio
 
@@ -46,3 +61,8 @@ Porém quando precisamos enviar um dado sensivel fazemos isso como header
 Chamar os dois serviços passando um raio dinâmico tanto no Header tanto no Body
 
 Aprender a invocar o serviço CURL
+
+
+## Passar Header no CURL
+
+curl --location --request POST 'http://localhost:3000/loginAdm'  --header 'email: admin@gmail.com' --header 'senha: 123'

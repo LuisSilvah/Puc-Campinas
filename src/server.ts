@@ -1,55 +1,24 @@
-/*
-    Servidor simples
-    usando o http sem express.
-*/
-import http from "http";
+import express, { Express, Request, Response, Router } from "express";
 
-const port = 3000;
-const PI: number = 3.1415;
+const app: Express = express();
+const route: Router = Router();
+const port: number = 3000;
 
-// Criar duas funções: uma calculadora a área do circulo
-// A = π r²
+app.post("/loginAdm", (req: Request, res: Response) => {
+  const email: string | undefined = req.get("email");
+  const senha: string | undefined = req.get("senha");
 
-// Outra: Comprimento da circunferencia
-
-function calcAreaCirculo(raio: number): number {
-
-
-    return PI * (raio*raio);
-}
-
-function calcCompCircunferencia (raio: number): number {
-    return 2 * PI * raio
-}
-
-const server = http.createServer((req, res) => {
-
-
-    if (req.url === "/calc/area/circulo") {
-        res.writeHead(200, { 'Content-type': 'text/plan' })
-        const areaCirculo: number = calcAreaCirculo(30)
-        res.end("Área do circulo: " + areaCirculo)
-    } else if (req.url === "/calc/comp/circunferencia") {
-        res.writeHead(200, { 'Content-type': 'text/plan' })
-
-        const compCircunferencia: number = calcCompCircunferencia(30)
-        res.end(`Comprimento da Circunferencia: ${compCircunferencia}`)
-    } else if (req.url === "/teste" ){
-        res.writeHead(200, { 'Content-type': 'application/json' })
-        // const resJson: {teste: string} = {teste: "teste"}
-        // res.end(JSON.stringify(resJson))
-        
-        const areaCirculo: number = calcAreaCirculo(30)
-
-        res.end(String(areaCirculo))
+  if (email && senha) {
+    if (email === "admin@gmail.com" && senha === "123") {
+      res.send({ msg: "Olá Administrador" });
+    } else {
+      res.send({ msg: "Você não acesso" });
     }
-    else {
-        res.writeHead(400, { 'Content-type': 'application/json' })
-        res.end("SERVIÇO INEXISTENTE")
-    }
-
+  } else {
+    res.send({ msg: "Não foi possivel encontrar serviço" });
+  }
 });
 
-server.listen(port, () => {
-    console.log(`Servidor rodando na porta ${port}`);
+app.listen(port, () => {
+  console.log("Servidor Rodando!");
 });
