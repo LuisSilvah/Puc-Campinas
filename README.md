@@ -46,3 +46,7 @@ Porém quando precisamos enviar um dado sensivel fazemos isso como header
 Chamar os dois serviços passando um raio dinâmico tanto no Header tanto no Body
 
 Aprender a invocar o serviço CURL
+
+curl --location --request POST 'http://localhost:3000/loginAdm' \ --header: 'email: admin@gmail.com' \ --header: 'senha: 123'
+curl: option --header:: is unknown
+curl: try 'curl --help' for more information
