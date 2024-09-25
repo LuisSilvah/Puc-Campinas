@@ -27,7 +27,6 @@ node server.js
 
 ## Nodemon
 
-
 ```
 npm install -D nodemon ts-node
 ```
